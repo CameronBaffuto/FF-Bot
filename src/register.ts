@@ -7,7 +7,11 @@ const commands = [
     .addStringOption(o => o.setName('message').setDescription('Text to post').setRequired(true)),
   new SlashCommandBuilder().setName('team').setDescription('Show my roster'),
   new SlashCommandBuilder().setName('startsit').setDescription('Show starters/bench for this week'),
-  new SlashCommandBuilder().setName('waivers').setDescription('Trending free agents for your league'),
+  new SlashCommandBuilder().setName('waivers').setDescription('AI waiver suggestions'),
+  new SlashCommandBuilder().setName('lineup').setDescription('AI lineup for the week'),
+  new SlashCommandBuilder().setName('compare').setDescription('Compare two players for this week')
+    .addStringOption(o => o.setName('a').setDescription('Player A name').setRequired(true))
+    .addStringOption(o => o.setName('b').setDescription('Player B name').setRequired(true)),
 ].map(c => c.toJSON());
 
 async function main() {
