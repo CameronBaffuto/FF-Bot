@@ -4,6 +4,8 @@
 # build output
 /dist
 /build
+/lambda_zips
+/dist-lambda
 
 # env files
 .env
