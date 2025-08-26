@@ -24,6 +24,24 @@ export async function getMatchups(leagueId: string, week: number) {
 
 export async function getUserByUsername(username: string) {
   const { data } = await axios.get(`${BASE}/user/${encodeURIComponent(username)}`);
-  // returns { user_id, username, display_name, ... }
   return data;
 }
+
+export async function getAllPlayersNFL(): Promise<Record<string, any>> {
+  const { data } = await axios.get(`${BASE}/players/nfl`);
+  return data;
+}
+
+export async function getStateNFL() {
+  const { data } = await axios.get(`${BASE}/state/nfl`);
+  return data; 
+}
+
+export async function getTrendingAdds(hours = 24 * 7) {
+  const { data } = await axios.get(`${BASE}/players/nfl/trending/add`, {
+    params: { lookback_hours: hours, limit: 200 }
+  });
+  return data;
+}
+
+

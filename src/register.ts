@@ -6,6 +6,8 @@ const commands = [
   new SlashCommandBuilder().setName('post').setDescription('Post a message via the bot')
     .addStringOption(o => o.setName('message').setDescription('Text to post').setRequired(true)),
   new SlashCommandBuilder().setName('team').setDescription('Show my roster'),
+  new SlashCommandBuilder().setName('startsit').setDescription('Show starters/bench for this week'),
+  new SlashCommandBuilder().setName('waivers').setDescription('Trending free agents for your league'),
 ].map(c => c.toJSON());
 
 async function main() {
